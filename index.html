@@ -16,8 +16,8 @@
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-dark">
-  <div class="container">
-    <span class="navbar-brand">Credit Card</span>
+  <div class="container justify-content-center">
+    <span class="navbar-brand text-center w-100">Credit Card</span>
   </div>
 </nav>
 
@@ -32,7 +32,7 @@
 
                 <div class="d-flex justify-content-between">
                     <span>💳</span>
-                    <span>VISA</span>
+                    <span id="card-type">VISA</span>
                 </div>
 
                 <h5 id="card-number">#### #### #### ####</h5>
@@ -53,14 +53,29 @@
 
         <!-- FORMULARIO -->
         <div class="col-md-6">
-            <h4 class="mb-3">Payment Details</h4>
+            <h4 class="mb-3 text-center">Payment Details</h4>
 
             <input type="text" id="number" class="form-control mb-2" placeholder="Card Number">
             <input type="text" id="name" class="form-control mb-2" placeholder="Card Holder">
 
-            <div class="d-flex gap-2">
-                <input type="text" id="exp" class="form-control" placeholder="MM/YY">
-                <input type="text" class="form-control" placeholder="CVV">
+            <!-- SELECTS -->
+            <div class="d-flex gap-2 mb-2">
+                <select id="month" class="form-control">
+                    <option value="">Mes</option>
+                    <option>01</option><option>02</option><option>03</option>
+                    <option>04</option><option>05</option><option>06</option>
+                    <option>07</option><option>08</option><option>09</option>
+                    <option>10</option><option>11</option><option>12</option>
+                </select>
+
+                <select id="year" class="form-control">
+                    <option value="">Año</option>
+                    <option>24</option><option>25</option><option>26</option>
+                    <option>27</option><option>28</option><option>29</option>
+                    <option>30</option>
+                </select>
+
+                <input type="text" id="cvv" class="form-control" placeholder="CVV">
             </div>
 
             <button class="btn w-100 mt-3">Pay Now</button>

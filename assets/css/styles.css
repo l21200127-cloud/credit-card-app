@@ -1,5 +1,4 @@
 body {
-    position: relative;
     margin: 0;
     height: 100vh;
     font-family: 'Segoe UI', sans-serif;
@@ -10,6 +9,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+/* Overlay oscuro */
 body::before {
     content: "";
     position: fixed;
@@ -18,7 +19,7 @@ body::before {
     background: rgba(0,0,0,0.5);
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
 }
 
 /* NAVBAR */
@@ -34,6 +35,7 @@ body::before {
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     color: white;
+    animation: fadeIn 1s ease;
 }
 
 /* TARJETA */
@@ -51,17 +53,7 @@ body::before {
 }
 
 .credit-card:hover {
-    transform: scale(1.05) rotate(1deg);
-}
-
-#card-number {
-    letter-spacing: 2px;
-    font-size: 18px;
-}
-
-#card-name {
-    font-size: 14px;
-    opacity: 0.8;
+    transform: scale(1.05);
 }
 
 /* INPUTS */
@@ -83,12 +75,10 @@ button {
     border: none !important;
     border-radius: 10px !important;
     color: white;
-    transition: 0.3s;
 }
 
 button:hover {
     transform: scale(1.05);
-    opacity: 0.9;
 }
 
 /* FOOTER */
@@ -97,9 +87,24 @@ footer {
     background: rgba(0,0,0,0.4);
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px){
-    .credit-card {
-        margin-bottom: 20px;
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+select {
+    background: rgba(255,255,255,0.1) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+select option {
+    color: black;
 }
